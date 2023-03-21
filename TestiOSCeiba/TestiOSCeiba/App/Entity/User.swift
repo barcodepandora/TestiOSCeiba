@@ -14,6 +14,7 @@ enum User {
     
     struct Response {
         var id: Int
+        var name: String
         var username: String
         var phone: String
         var email: String
@@ -21,6 +22,7 @@ enum User {
     
     struct ViewModel {
         var id: Int
+        var name: String
         var username: String
         var phone: String
         var email: String

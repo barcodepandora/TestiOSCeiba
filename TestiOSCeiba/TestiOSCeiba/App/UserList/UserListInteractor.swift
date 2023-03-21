@@ -29,7 +29,7 @@ class UserListInteractor: UserListBusinessLogic {
         getDirectoryUseCase?.fetchDirectory(completion: { (response) in
             var users: [User.Response] = []
             for user in response {
-                users.append(User.Response(id: user.id ?? 1, username: user.username ?? "", phone: user.phone ?? "", email: user.email ?? ""))
+                users.append(User.Response(id: user.id ?? 1, name: user.name ?? "", username: user.username ?? "", phone: user.phone ?? "", email: user.email ?? ""))
             }
             let directory = Directory.Response(directory: users)
             self.presenter.presentDirectory(directory: directory)
@@ -38,6 +38,6 @@ class UserListInteractor: UserListBusinessLogic {
     
     func getUser(user: User.Request) {
         self.getUserUseCase?.fetchUser(user: user, completion: { (response) in
-            self.presenter.presentUser(user: User.Response(id: response.id ?? 1, username: response.username ?? "", phone: response.phone ?? "", email: response.email ?? ""))        })
+            self.presenter.presentUser(user: User.Response(id: response.id ?? 1, name: response.name!,  username: response.username ?? "", phone: response.phone ?? "", email: response.email ?? ""))        })
     }
 }

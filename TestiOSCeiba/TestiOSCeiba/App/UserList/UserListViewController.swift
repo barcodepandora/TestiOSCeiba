@@ -60,10 +60,8 @@ class UserListViewController: UIViewController, UserListDisplayProtocol {
     
     @objc func textFieldDidChange(_ textField: UITextField) {
         self.filtered?.directory = self.directory!.directory
-        if textField.text?.count == 0 {
-            self.tableUser.reloadData()
-        } else {
-            self.filtered?.directory = self.directory!.directory.filter { $0.username.localizedCaseInsensitiveContains(textField.text!) }
+        if textField.text!.count > 0 {
+            self.filtered?.directory = self.directory!.directory.filter { $0.name.localizedCaseInsensitiveContains(textField.text!) }
         }
         self.tableUser.reloadData()
     }
@@ -78,11 +76,17 @@ extension UserListViewController: UITableViewDataSource {
         return (self.filtered?.directory.count)!
     }
 
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let user = filtered?.directory[indexPath.row]
 
         let cell = tableView.dequeueReusableCell(withIdentifier: self.identifier, for: indexPath) as! UserTableViewCell
-        cell.labelUserName.text = user?.username
+        cell.labelUserName.text = user?.name
+        cell.labelPhone.text = user?.phone
+        cell.labelEmail.text = user?.email
         return cell
     }
 }
