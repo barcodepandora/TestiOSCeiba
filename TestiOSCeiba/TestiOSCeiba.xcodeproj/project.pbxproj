@@ -16,6 +16,11 @@
 		79629BDE29C9290C0047B021 /* UserListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79629BDD29C9290C0047B021 /* UserListRouter.swift */; };
 		79629BE329C92CE30047B021 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79629BE129C92CE30047B021 /* UserViewController.swift */; };
 		79629BE429C92CE30047B021 /* UserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79629BE229C92CE30047B021 /* UserViewController.xib */; };
+		7974DFD029C94DC400B2078F /* GetPostUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7974DFCF29C94DC400B2078F /* GetPostUseCase.swift */; };
+		7974DFD229C94E2300B2078F /* PostDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7974DFD129C94E2300B2078F /* PostDecodable.swift */; };
+		7974DFD429C94EFC00B2078F /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7974DFD329C94EFC00B2078F /* Post.swift */; };
+		7974DFD729C9549600B2078F /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7974DFD529C9549600B2078F /* PostTableViewCell.swift */; };
+		7974DFD829C9549600B2078F /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7974DFD629C9549600B2078F /* PostTableViewCell.xib */; };
 		79960D1E29C699890041751D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79960D1D29C699890041751D /* AppDelegate.swift */; };
 		79960D2029C699890041751D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79960D1F29C699890041751D /* SceneDelegate.swift */; };
 		79960D2229C699890041751D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79960D2129C699890041751D /* ViewController.swift */; };
@@ -29,7 +34,7 @@
 		79960D5729C69F1F0041751D /* UserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79960D5629C69F1F0041751D /* UserInteractor.swift */; };
 		79960D5A29C6A0A30041751D /* GetDirectoryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79960D5929C6A0A30041751D /* GetDirectoryUseCase.swift */; };
 		79960D5C29C6A2760041751D /* UserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79960D5B29C6A2760041751D /* UserPresenter.swift */; };
-		79960D5F29C6A7130041751D /* UserCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79960D5E29C6A7130041751D /* UserCodable.swift */; };
+		79960D5F29C6A7130041751D /* UserDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79960D5E29C6A7130041751D /* UserDecodable.swift */; };
 		79960D6129C6A92F0041751D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79960D6029C6A92F0041751D /* User.swift */; };
 		79960D6529C6B1A50041751D /* Directory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79960D6429C6B1A50041751D /* Directory.swift */; };
 		79960D6729C6B69E0041751D /* GetUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79960D6629C6B69E0041751D /* GetUserUseCase.swift */; };
@@ -70,6 +75,11 @@
 		79629BDD29C9290C0047B021 /* UserListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListRouter.swift; sourceTree = "<group>"; };
 		79629BE129C92CE30047B021 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		79629BE229C92CE30047B021 /* UserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserViewController.xib; sourceTree = "<group>"; };
+		7974DFCF29C94DC400B2078F /* GetPostUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPostUseCase.swift; sourceTree = "<group>"; };
+		7974DFD129C94E2300B2078F /* PostDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDecodable.swift; sourceTree = "<group>"; };
+		7974DFD329C94EFC00B2078F /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		7974DFD529C9549600B2078F /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		7974DFD629C9549600B2078F /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		79960D1A29C699890041751D /* TestiOSCeiba.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestiOSCeiba.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79960D1D29C699890041751D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79960D1F29C699890041751D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,7 +97,7 @@
 		79960D5629C69F1F0041751D /* UserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInteractor.swift; sourceTree = "<group>"; };
 		79960D5929C6A0A30041751D /* GetDirectoryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDirectoryUseCase.swift; sourceTree = "<group>"; };
 		79960D5B29C6A2760041751D /* UserPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPresenter.swift; sourceTree = "<group>"; };
-		79960D5E29C6A7130041751D /* UserCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCodable.swift; sourceTree = "<group>"; };
+		79960D5E29C6A7130041751D /* UserDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDecodable.swift; sourceTree = "<group>"; };
 		79960D6029C6A92F0041751D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		79960D6429C6B1A50041751D /* Directory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Directory.swift; sourceTree = "<group>"; };
 		79960D6629C6B69E0041751D /* GetUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserUseCase.swift; sourceTree = "<group>"; };
@@ -139,6 +149,19 @@
 				DD032747B9520B037A105B59 /* Pods_TestiOSCeibaTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		798FDB5E29C94A4F00A2D25C /* UserL */ = {
+			isa = PBXGroup;
+			children = (
+				7974DFD529C9549600B2078F /* PostTableViewCell.swift */,
+				7974DFD629C9549600B2078F /* PostTableViewCell.xib */,
+				79629BE129C92CE30047B021 /* UserViewController.swift */,
+				79629BE229C92CE30047B021 /* UserViewController.xib */,
+				79960D5629C69F1F0041751D /* UserInteractor.swift */,
+				79960D5B29C6A2760041751D /* UserPresenter.swift */,
+			);
+			path = UserL;
 			sourceTree = "<group>";
 		};
 		79960D1129C699890041751D = {
@@ -200,18 +223,15 @@
 				79960D5D29C6A6FE0041751D /* Entity */,
 				79960D5829C6A05A0041751D /* Domain */,
 				79960D4F29C69CBA0041751D /* Main */,
-				79960D4E29C69C150041751D /* User */,
+				798FDB5E29C94A4F00A2D25C /* UserL */,
+				79960D4E29C69C150041751D /* UserList */,
 			);
 			path = App;
 			sourceTree = "<group>";
 		};
-		79960D4E29C69C150041751D /* User */ = {
+		79960D4E29C69C150041751D /* UserList */ = {
 			isa = PBXGroup;
 			children = (
-				79629BE129C92CE30047B021 /* UserViewController.swift */,
-				79629BE229C92CE30047B021 /* UserViewController.xib */,
-				79960D5629C69F1F0041751D /* UserInteractor.swift */,
-				79960D5B29C6A2760041751D /* UserPresenter.swift */,
 				79C5D5AA29C8BD3800CFC019 /* UserListViewController.xib */,
 				79C5D5A629C8B52400CFC019 /* UserListViewController.swift */,
 				79629BD929C905420047B021 /* UserTableViewCell.swift */,
@@ -220,7 +240,7 @@
 				79629BD329C8EEED0047B021 /* UserListPresenter.swift */,
 				79629BDD29C9290C0047B021 /* UserListRouter.swift */,
 			);
-			path = User;
+			path = UserList;
 			sourceTree = "<group>";
 		};
 		79960D4F29C69CBA0041751D /* Main */ = {
@@ -238,6 +258,7 @@
 			children = (
 				79960D5929C6A0A30041751D /* GetDirectoryUseCase.swift */,
 				79960D6629C6B69E0041751D /* GetUserUseCase.swift */,
+				7974DFCF29C94DC400B2078F /* GetPostUseCase.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -246,9 +267,11 @@
 			isa = PBXGroup;
 			children = (
 				79960D6029C6A92F0041751D /* User.swift */,
+				79960D5E29C6A7130041751D /* UserDecodable.swift */,
 				79960D6429C6B1A50041751D /* Directory.swift */,
-				79960D5E29C6A7130041751D /* UserCodable.swift */,
 				79B0555629C7365D00D8C62B /* DirectoryDecodable.swift */,
+				7974DFD329C94EFC00B2078F /* Post.swift */,
+				7974DFD129C94E2300B2078F /* PostDecodable.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -388,6 +411,7 @@
 				79629BE429C92CE30047B021 /* UserViewController.xib in Resources */,
 				79C5D5AB29C8BD3800CFC019 /* UserListViewController.xib in Resources */,
 				79960D2729C6998B0041751D /* Assets.xcassets in Resources */,
+				7974DFD829C9549600B2078F /* PostTableViewCell.xib in Resources */,
 				79960D2529C699890041751D /* Main.storyboard in Resources */,
 				79629BDC29C905420047B021 /* UserTableViewCell.xib in Resources */,
 			);
@@ -528,14 +552,18 @@
 				79960D1E29C699890041751D /* AppDelegate.swift in Sources */,
 				79629BD229C8EE900047B021 /* UserListInteractor.swift in Sources */,
 				79960D5C29C6A2760041751D /* UserPresenter.swift in Sources */,
+				7974DFD729C9549600B2078F /* PostTableViewCell.swift in Sources */,
+				7974DFD029C94DC400B2078F /* GetPostUseCase.swift in Sources */,
+				7974DFD429C94EFC00B2078F /* Post.swift in Sources */,
 				79960D2029C699890041751D /* SceneDelegate.swift in Sources */,
 				79B0557129C7681800D8C62B /* APIRouter.swift in Sources */,
 				79B0555729C7365D00D8C62B /* DirectoryDecodable.swift in Sources */,
 				79960D5A29C6A0A30041751D /* GetDirectoryUseCase.swift in Sources */,
 				79960D6529C6B1A50041751D /* Directory.swift in Sources */,
+				7974DFD229C94E2300B2078F /* PostDecodable.swift in Sources */,
 				79960D6129C6A92F0041751D /* User.swift in Sources */,
 				79B0556F29C74DC200D8C62B /* APIClient.swift in Sources */,
-				79960D5F29C6A7130041751D /* UserCodable.swift in Sources */,
+				79960D5F29C6A7130041751D /* UserDecodable.swift in Sources */,
 				79629BDE29C9290C0047B021 /* UserListRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

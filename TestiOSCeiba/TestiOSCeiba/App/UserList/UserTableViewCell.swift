@@ -10,6 +10,8 @@ import UIKit
 class UserTableViewCell: UITableViewCell {
 
     @IBOutlet weak var labelUserName: UILabel!
+    @IBOutlet weak var labelPhone: UILabel!
+    @IBOutlet weak var labelEmail: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

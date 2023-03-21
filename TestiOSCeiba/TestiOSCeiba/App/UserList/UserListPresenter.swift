@@ -28,13 +28,14 @@ class UserListPresenter: UserListPresenterProtocol {
     func getViewModelFromResponse(directory: Directory.Response) -> [User.ViewModel] {
         var users: [User.ViewModel] = []
         for user in directory.directory {
-            users.append(User.ViewModel(id: user.id, username: user.username, phone: user.phone, email: user.email))
+            users.append(User.ViewModel(id: user.id, name: user.name, username: user.username, phone: user.phone, email: user.email))
         }
         return users
     }
     
     func presentUser(user: User.Response) {
-        let user = User.ViewModel(id: user.id, username: user.username, phone: user.phone, email: user.email)
+        let user = User.ViewModel(id: user.id, name: user.name, username: user.username, phone: user.phone, email: user.email)
         self.vc.displayUser(user: user)
     }
+    
 }
