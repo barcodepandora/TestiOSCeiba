@@ -11,7 +11,7 @@ import Alamofire
 enum APIRouter: URLRequestConvertible {
     case returnDirectory
     
-    //MARK: - URL
+    // MARK: - URL
     private var path: String {
         switch self {
         case .returnDirectory:
@@ -19,7 +19,7 @@ enum APIRouter: URLRequestConvertible {
         }
     }
 
-    //MARK: - HTTPMethod
+    // MARK: - HTTPMethod
     private var method: HTTPMethod {
         switch self {
         case .returnDirectory:
@@ -27,7 +27,7 @@ enum APIRouter: URLRequestConvertible {
         }
     }
     
-    //MARK: - URLRequestConvertible
+    // MARK: - URLRequestConvertible
     func asURLRequest() throws -> URLRequest {
         let url = URL(string: path)
         return URLRequest(url: url!)

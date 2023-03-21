@@ -9,7 +9,6 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -19,7 +18,7 @@ class ViewController: UIViewController {
         MainRouter().routeToUser(source: self)
     }
     
-    @IBAction func letsBeginHere(_ sender: Any) {
+    @IBAction func `try`(_ sender: Any) {
         self.enterTestiOS()
     }
     

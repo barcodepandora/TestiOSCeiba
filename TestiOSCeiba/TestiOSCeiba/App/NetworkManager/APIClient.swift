@@ -9,8 +9,6 @@ import Foundation
 import Alamofire
 
 class APIClient {
-    
-    //MARK: Mock
     static let directory = """
       [
         {
@@ -245,8 +243,6 @@ class APIClient {
         }
       ]
       """
-    
-    //MARK: Netorking
     static func isAPIAccesible() -> Bool {
         return true
     }

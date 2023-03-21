@@ -16,18 +16,15 @@ protocol UserListDisplayProtocol: AnyObject {
 
 class UserListViewController: UIViewController, UserListDisplayProtocol {
     
-    //MARK: Outlet
     @IBOutlet weak var tableUser : UITableView!
     @IBOutlet weak var autocomplete: UITextField!
     
-    //MARK: Character
     var interactor: UserListInteractor?
     var presenter: UserListPresenterProtocol?
     let identifier = "UserTableViewCell"
     var directory: Directory.ViewModel?
     var filtered: Directory.ViewModel?
     
-    //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setup()

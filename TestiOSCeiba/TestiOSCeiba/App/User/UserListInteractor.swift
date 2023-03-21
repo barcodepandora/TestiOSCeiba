@@ -13,13 +13,8 @@ protocol UserListBusinessLogic {
 }
 
 class UserListInteractor: UserListBusinessLogic {
-    
-    //MARK: Character
     var presenter: UserListPresenterProtocol!
-    var getDirectoryUseCase: GetDirectoryUseCase?
-    var getUserUseCase: GetUserUseCase?
     
-    //MARK: init
     convenience init(presenter: UserListPresenterProtocol) {
         self.init()
         self.getDirectoryUseCase = GetDirectoryUseCase()
@@ -27,7 +22,9 @@ class UserListInteractor: UserListBusinessLogic {
         self.presenter = presenter
     }
     
-    //MARK: Business
+    var getDirectoryUseCase: GetDirectoryUseCase?
+    var getUserUseCase: GetUserUseCase?
+    
     func getDirectory() {
         getDirectoryUseCase?.fetchDirectory(completion: { (response) in
             var users: [User.Response] = []
