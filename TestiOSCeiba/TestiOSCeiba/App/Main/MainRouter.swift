@@ -6,18 +6,21 @@
 //
 
 import Foundation
+import UIKit
 
 protocol MainRouterProtocol {
-    func routeToUser()
+    func routeToUser(source: UIViewController)
 }
 
 class MainRouter: MainRouterProtocol {
-    func routeToUser() {
-        navigateToUser(destination: UserViewController())
+    
+    func routeToUser(source: UIViewController) {
+        navigateToUser(source: source, destination: UserViewController())
 
     }
     
     // MARK: Navigation
-    func navigateToUser(destination: UserDisplayProtocol) {
+    func navigateToUser(source: UIViewController, destination: UserDisplayProtocol) {
+        source.show(UserListViewController(), sender: self)
     }
 }

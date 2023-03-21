@@ -8,7 +8,6 @@
 import Foundation
 
 protocol UserBusinessLogic {
-    func getDirectory()
     func getUser(user: User.Request)
 }
 
@@ -20,18 +19,8 @@ class UserInteractor: UserBusinessLogic {
         self.presenter = presenter
     }
     
-    var getDirectoryUseCase: GetDirectoryUseCase?
     var getUserUseCase: GetUserUseCase?
     
-    func getDirectory() {
-        getDirectoryUseCase?.fetchDirectory()
-        let directory = Directory.Response(directory: [])
-        self.presenter.presentDirectory(directory: directory)
-    }
-    
     func getUser(user: User.Request) {
-        getUserUseCase?.fetchUser(user: user)
-        let user = User.Response(username: user.username)
-        self.presenter.presentUser(user: user)
     }
 }

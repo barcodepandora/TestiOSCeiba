@@ -9,14 +9,20 @@ import Foundation
 
 enum User {
     struct Request {
-        var username: String
+        var id: Int
     }
     
     struct Response {
+        var id: Int
         var username: String
+        var phone: String
+        var email: String
     }
     
     struct ViewModel {
+        var id: Int
         var username: String
+        var phone: String
+        var email: String
     }    
 }

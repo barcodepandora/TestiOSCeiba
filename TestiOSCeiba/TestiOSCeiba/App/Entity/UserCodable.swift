@@ -7,23 +7,97 @@
 
 import Foundation
 
-struct UserCodable: Codable{
-    var username: String?
-    var password: String?
+struct UserDecodable: Decodable {
+    let id: Int?
+    let name: String?
+    let username: String?
+    let email: String?
+    let address: AddressDecodable
+    let phone: String?
+    let website: String?
+    let company: CompanyDecodable?
     
-    enum CodingKeys: String, CodingKey{
+    enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case name = "name"
         case username = "username"
-        case password = "password"
+        case email = "email"
+        case address = "address"
+        case phone = "phone"
+        case website = "website"
+        case company = "company"
     }
     
-    public init(username: String, password: String) {
-        self.username = username
-        self.password = password
+    init(from decoder:Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        id = try values.decodeIfPresent(Int.self, forKey: .id)
+        name = try values.decodeIfPresent(String.self, forKey: .name)
+        username = try values.decodeIfPresent(String.self, forKey: .username)
+        email = try values.decodeIfPresent(String.self, forKey: .email)
+        address = try values.decodeIfPresent(AddressDecodable.self, forKey: .address)!
+        phone = try values.decodeIfPresent(String.self, forKey: .phone)
+        website = try values.decodeIfPresent(String.self, forKey: .website)
+        company = try values.decodeIfPresent(CompanyDecodable.self, forKey: .company)
+    }
+}
+
+struct AddressDecodable: Decodable {
+    let street: String?
+    let suite: String?
+    let city: String?
+    let zipcode: String?
+    let geo: GeoDecodable
+    
+    enum CodingKeys: String, CodingKey {
+        case street = "street"
+        case suite = "suite"
+        case city = "city"
+        case zipcode = "zipcode"
+        case geo = "geo"
+
     }
     
-//    func encode(to encoder: Encoder) throws {
-//        var container = encoder.container(keyedBy: CodingKeys.self)
-//        try container.encodeIfPresent(username, forKey: .username)
-//        try container.encodeIfPresent(password, forKey: .password)
-//    }
+    init(from decoder:Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        street = try values.decodeIfPresent(String.self, forKey: .street)
+        suite = try values.decodeIfPresent(String.self, forKey: .suite)
+        city = try values.decodeIfPresent(String.self, forKey: .city)
+        zipcode = try values.decodeIfPresent(String.self, forKey: .zipcode)
+        geo = try values.decodeIfPresent(GeoDecodable.self, forKey: .geo)!
+    }
+}
+
+struct CompanyDecodable: Decodable {
+    let name: String?
+    let catchPhrase: String?
+    let bs: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case name = "name"
+        case catchPhrase = "catchPhrase"
+        case bs = "bs"
+    }
+    
+    init(from decoder:Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        name = try values.decodeIfPresent(String.self, forKey: .name)
+        catchPhrase = try values.decodeIfPresent(String.self, forKey: .catchPhrase)
+        bs = try values.decodeIfPresent(String.self, forKey: .bs)
+    }
+}
+
+struct GeoDecodable: Decodable {
+    let lat: String?
+    let lng: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case lat = "lat"
+        case lng = "lng"
+    }
+    
+    init(from decoder:Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        lat = try values.decodeIfPresent(String.self, forKey: .lat)
+        lng = try values.decodeIfPresent(String.self, forKey: .lng)
+    }
 }

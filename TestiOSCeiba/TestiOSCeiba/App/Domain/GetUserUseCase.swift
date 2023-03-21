@@ -8,11 +8,13 @@
 import Foundation
 
 protocol GetUserUseCaseProtocol {
-    func fetchUser(user: User.Request)
+    func fetchUser(user: User.Request, completion: @escaping (UserDecodable) -> Void)
 }
 
 class GetUserUseCase: GetUserUseCaseProtocol {
-    func fetchUser(user: User.Request) {
-        
+    func fetchUser(user: User.Request, completion: @escaping (UserDecodable) -> Void) {
+        if APIClient.isAPIAccesible() {
+            completion(APIClient.returnUser(user: user)!)
+        }
     }
 }

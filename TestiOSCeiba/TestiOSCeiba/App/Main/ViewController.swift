@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     }
     
     private func enterTestiOS() {
-        print("inside enterTestiOS")
+        MainRouter().routeToUser(source: self)
     }
     
     @IBAction func `try`(_ sender: Any) {

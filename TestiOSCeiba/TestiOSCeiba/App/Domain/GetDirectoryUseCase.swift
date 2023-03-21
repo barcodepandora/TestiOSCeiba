@@ -6,13 +6,37 @@
 //
 
 import Foundation
+import Alamofire
 
 protocol GetDirectoryUseCaseProtocol {
-    func fetchDirectory()
+    func fetchDirectory(completion: @escaping ([UserDecodable]) -> Void)
 }
 
 class GetDirectoryUseCase: GetDirectoryUseCaseProtocol {
-    func fetchDirectory() {
-        
+    func fetchDirectory(completion: @escaping ([UserDecodable]) -> Void) {
+        if APIClient.isAPIAccesible() {
+            
+//            APIClient.returnAfterDecode()
+            
+//            APIClient.returnDirectory(completion: { response in
+//                completion(self.returnDirectory(response: response))
+//            })
+            
+            completion(APIClient.returnDirectoryMock())
+        }
     }
+    
+    private func returnDirectory(response: AFDataResponse<[UserDecodable]>) -> [UserDecodable] {
+        let jsonData = response.data! //Data(response.data!) //data(using: .utf8) else { return [] }
+        do {
+            let decodables = try JSONDecoder().decode([UserDecodable].self, from: jsonData)
+            print(decodables)
+            return decodables
+        } catch {
+            print (error)
+            return []
+        }
+    }
+
+
 }

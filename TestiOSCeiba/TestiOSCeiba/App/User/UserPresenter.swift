@@ -8,7 +8,6 @@
 import Foundation
 
 protocol UserPresenterProtocol {
-    func presentDirectory(directory: Directory.Response)
     func presentUser(user: User.Response)
 }
 
@@ -20,21 +19,8 @@ class UserPresenter: UserPresenterProtocol {
         self.vc = vc
     }
     
-    func presentDirectory(directory: Directory.Response) {
-        let directory = Directory.ViewModel(directory: self.getDirectoryViewModelFromResponse(directory: directory))
-        self.vc.displayDirectory(directory: directory)
-    }
-    
-    func getDirectoryViewModelFromResponse(directory: Directory.Response) -> [User.ViewModel] {
-        var d: [User.ViewModel] = []
-        for user in directory.directory {
-            d.append(User.ViewModel(username: user.username))
-        }
-        return d
-    }
-    
     func presentUser(user: User.Response) {
-        let user = User.ViewModel(username: user.username)
+        let user = User.ViewModel(id: user.id, username: user.username, phone: user.phone, email: user.email)
         self.vc.displayUser(user: user)
     }
 }
