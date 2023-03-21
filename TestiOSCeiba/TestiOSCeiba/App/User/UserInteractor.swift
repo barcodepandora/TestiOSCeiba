@@ -12,15 +12,18 @@ protocol UserBusinessLogic {
 }
 
 class UserInteractor: UserBusinessLogic {
-    var presenter: UserPresenterProtocol!
     
+    //MARK: Character
+    var presenter: UserPresenterProtocol!
+    var getUserUseCase: GetUserUseCase?
+    
+    //MARK: init
     convenience init(presenter: UserPresenterProtocol) {
         self.init()
         self.presenter = presenter
     }
     
-    var getUserUseCase: GetUserUseCase?
-    
+    //MARK: Business
     func getUser(user: User.Request) {
     }
 }

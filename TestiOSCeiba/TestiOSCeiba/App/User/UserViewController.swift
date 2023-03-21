@@ -13,17 +13,22 @@ protocol UserDisplayProtocol: AnyObject {
 }
 
 class UserViewController: UIViewController, UserDisplayProtocol {
+    
+    //MARK: Outlet
     @IBOutlet weak var labelName: UILabel!
     
+    //MARK: Character
     var interactor: UserInteractor?
     var presenter: UserPresenterProtocol?
     var user: User.ViewModel?
     
+    //MARK: init
     convenience init(user: User.ViewModel) {
         self.init()
         self.user = user
     }
     
+    //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setup()
@@ -35,6 +40,7 @@ class UserViewController: UIViewController, UserDisplayProtocol {
         self.labelName.text = self.user?.username
     }
     
+    //MARK: Business
     func getUser(user: User.ViewModel) {
 
     }

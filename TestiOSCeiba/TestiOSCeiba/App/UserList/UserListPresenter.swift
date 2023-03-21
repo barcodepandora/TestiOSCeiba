@@ -13,19 +13,23 @@ protocol UserListPresenterProtocol {
 }
 
 class UserListPresenter: UserListPresenterProtocol {
+    
+    //MARK: Character
     var vc: UserListDisplayProtocol!
     
+    //MARK: init
     convenience init(vc: UserListDisplayProtocol) {
         self.init()
         self.vc = vc
     }
     
+    //MARK: Business
     func presentDirectory(directory: Directory.Response) {
         let directory = Directory.ViewModel(directory: self.getViewModelFromResponse(directory: directory))
         self.vc.displayDirectory(directory: directory)
     }
     
-    func getViewModelFromResponse(directory: Directory.Response) -> [User.ViewModel] {
+    private func getViewModelFromResponse(directory: Directory.Response) -> [User.ViewModel] {
         var users: [User.ViewModel] = []
         for user in directory.directory {
             users.append(User.ViewModel(id: user.id, username: user.username, phone: user.phone, email: user.email))

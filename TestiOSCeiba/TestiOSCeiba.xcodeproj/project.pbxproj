@@ -141,6 +141,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		79629BE529C92F830047B021 /* UserList */ = {
+			isa = PBXGroup;
+			children = (
+				79C5D5AA29C8BD3800CFC019 /* UserListViewController.xib */,
+				79C5D5A629C8B52400CFC019 /* UserListViewController.swift */,
+				79629BD929C905420047B021 /* UserTableViewCell.swift */,
+				79629BDA29C905420047B021 /* UserTableViewCell.xib */,
+				79629BD129C8EE900047B021 /* UserListInteractor.swift */,
+				79629BD329C8EEED0047B021 /* UserListPresenter.swift */,
+				79629BDD29C9290C0047B021 /* UserListRouter.swift */,
+			);
+			path = UserList;
+			sourceTree = "<group>";
+		};
 		79960D1129C699890041751D = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +214,7 @@
 				79960D5D29C6A6FE0041751D /* Entity */,
 				79960D5829C6A05A0041751D /* Domain */,
 				79960D4F29C69CBA0041751D /* Main */,
+				79629BE529C92F830047B021 /* UserList */,
 				79960D4E29C69C150041751D /* User */,
 			);
 			path = App;
@@ -212,13 +227,6 @@
 				79629BE229C92CE30047B021 /* UserViewController.xib */,
 				79960D5629C69F1F0041751D /* UserInteractor.swift */,
 				79960D5B29C6A2760041751D /* UserPresenter.swift */,
-				79C5D5AA29C8BD3800CFC019 /* UserListViewController.xib */,
-				79C5D5A629C8B52400CFC019 /* UserListViewController.swift */,
-				79629BD929C905420047B021 /* UserTableViewCell.swift */,
-				79629BDA29C905420047B021 /* UserTableViewCell.xib */,
-				79629BD129C8EE900047B021 /* UserListInteractor.swift */,
-				79629BD329C8EEED0047B021 /* UserListPresenter.swift */,
-				79629BDD29C9290C0047B021 /* UserListRouter.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
